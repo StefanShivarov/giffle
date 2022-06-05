@@ -15,7 +15,6 @@ export class SearchPageComponent implements OnInit, AfterViewInit{
   totalCount!: number;
   itemsPerPage: number = 20;
   offset: number = 0;
-  isLoading = true;
 
   searchInput: FormControl = new FormControl();
 
@@ -29,12 +28,9 @@ export class SearchPageComponent implements OnInit, AfterViewInit{
   renderTrendingGifs(){
     this.gifService.getTrendingGifs()
     .subscribe((response) => {
-      this.isLoading = false;
       this.gifs = response.data;
       // this.totalCount = response.pagination.total_count;
       this.setCorrectTotalCount('');
-
-      console.log(response);
     });
   }
 
@@ -46,18 +42,12 @@ export class SearchPageComponent implements OnInit, AfterViewInit{
         
       )
       .subscribe(query => {
-        this.isLoading = true;
         this.page = 1;
         this.offset = 0;
-        console.log(query);
         if(query !== ''){
           this.gifService.searchGifs(query, 0)
           .subscribe(response => {
-            this.isLoading = false;
-            console.log(response);
             this.totalCount = response.pagination.total_count;
-            
-            console.log('total count is '+ this.totalCount);
             this.gifs = response.data;
           })
         }else{
@@ -67,14 +57,10 @@ export class SearchPageComponent implements OnInit, AfterViewInit{
   }
 
   onPageChange($event: any){
-    this.isLoading = true;
     this.page = $event;
-    console.log(this.page);
     this.offset = (this.page - 1)*this.itemsPerPage;
     this.gifService.searchGifs(this.searchInput.value, this.offset)
       .subscribe(response => {
-        this.isLoading = false;
-        console.log(response);
         // this.totalCount = response.pagination.total_count;
         console.log('total count is '+ this.totalCount);
         this.gifs = response.data;

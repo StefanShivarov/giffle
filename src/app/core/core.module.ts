@@ -5,7 +5,9 @@ import { GifService } from './service/gif.service';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    
+  ],
   imports: [
     CommonModule,
     

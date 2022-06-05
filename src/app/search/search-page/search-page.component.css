@@ -1,19 +1,25 @@
+.title{
+    font-family: 'Fira Sans', sans-serif;
+}
+
 #wrapper{
     
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 3rem;
+    position: relative;
 }
 
 .search-section{
-    margin-top: 17vh;
+    margin-top: 21vh;
 }
 
-.search-section h1{
+section.search-section>h1.title{
     font-size: 100px;
     font-weight: 400;
     text-align: center;
+    margin-bottom: 1rem;
 }
 
 .search-section input#search{
@@ -21,9 +27,10 @@
     padding: 1rem;
     outline: none;
     border-radius: 5px;
-    border: 1px solid black;
+    border: 1px solid lightgray;
     width: 500px;
     font-size: 1rem;
+    margin-top: 2rem;
 }
 
 .search-results{
@@ -37,7 +44,24 @@
     max-width: 250px;
 }
 
+.pagination-container{
+    margin: 2rem 0;
+}
 
 .my-pagination ::ng-deep .ngx-pagination .current {
     background: rgb(204, 12, 172);
+}
+
+.nothing-to-show{
+    text-align: center;
+}
+
+footer{
+    text-align: center;
+    padding: 2rem;
+    background-color: lightgray;
+}
+
+.giphy-logo{
+    height: 1rem;
 }

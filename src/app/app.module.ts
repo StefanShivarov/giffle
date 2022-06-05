@@ -5,17 +5,21 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { SearchModule } from './search/search.module';
 import { HttpClientModule } from '@angular/common/http';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxScrollTopModule } from 'ngx-scrolltop';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    
   ],
   imports: [
     BrowserModule,
     SearchModule,
     CoreModule.forRoot(),
     HttpClientModule,
-    
+    MDBBootstrapModule
   ],
   providers: [],
   bootstrap: [AppComponent]

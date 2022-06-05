@@ -1,12 +1,15 @@
 <main id="wrapper">
     <section class="search-section">
-        <h1>GIFFLE</h1>
+        <h1 class="title">GIFFLE</h1>
         <form>
             <input [formControl]="searchInput" type="text" name="search" id="search" placeholder="Search for your favourite GIFs...">
         </form>
     </section>
-    <section class="search-results">
-        <div class="gif-card" *ngFor="let gif of gifs | paginate: {
+    <section *ngIf="gifs.length === 0" class="nothing-to-show">
+        <h2 >Oops... We've got nothing to show!</h2>
+    </section>
+    <section *ngIf="gifs.length > 0" class="search-results">
+        <div  class="gif-card" *ngFor="let gif of gifs | paginate: {
             itemsPerPage: itemsPerPage, 
             currentPage: page,
             totalItems: totalCount
@@ -14,9 +17,16 @@
             <img [src]="gif.images.downsized.url" alt="">
         </div>
     </section>
-    <div>
+    <div class="pagination-container">
         <pagination-controls class="my-pagination"
             previousLabel="Previous" nextLabel="Next" (pageChange)="onPageChange($event)"
         ></pagination-controls>
     </div>
+
+    
 </main>
+<app-sidebar></app-sidebar>
+
+<footer>
+    &copy; 2022 Stefan Shivarov. Made with <img class="giphy-logo" src="https://upload.wikimedia.org/wikipedia/commons/8/82/Giphy-logo.svg" alt=""> API for developers.
+</footer>
