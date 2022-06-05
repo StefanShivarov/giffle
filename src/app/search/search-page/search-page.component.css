@@ -36,3 +36,8 @@
 .gif-card img{
     max-width: 250px;
 }
+
+
+.my-pagination ::ng-deep .ngx-pagination .current {
+    background: rgb(204, 12, 172);
+}

@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SearchPageComponent } from './search-page/search-page.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 
@@ -9,7 +12,10 @@ import { SearchPageComponent } from './search-page/search-page.component';
     SearchPageComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule,
+    NgxPaginationModule,
+    MatProgressSpinnerModule
   ],
   exports:[
     SearchPageComponent

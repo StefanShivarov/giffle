@@ -8,6 +8,7 @@ import { GifService } from './service/gif.service';
   declarations: [],
   imports: [
     CommonModule,
+    
   ]
 })
 export class CoreModule { 

@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { SearchModule } from './search/search.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,9 @@ import { SearchModule } from './search/search.module';
   imports: [
     BrowserModule,
     SearchModule,
-    CoreModule.forRoot()
+    CoreModule.forRoot(),
+    HttpClientModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
