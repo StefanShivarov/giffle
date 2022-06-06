@@ -2,7 +2,7 @@
     <section class="search-section">
         <h1 class="title">GIFFLE</h1>
         <form>
-            <input [formControl]="searchInput" type="text" name="search" id="search" placeholder="Search for your favourite GIFs...">
+            <input autocomplete="off" [formControl]="searchInput" type="text" name="search" id="search" placeholder="Search for your favourite GIFs...">
         </form>
     </section>
     <section *ngIf="gifs.length === 0" class="nothing-to-show">
