@@ -22,7 +22,7 @@ This is an example of how you may give instructions on setting up your project l
 
 2. Clone the repository
 ```cmd
-    git clone https://github.com/StefanShivarov/angular-giffle.git
+    git clone https://github.com/StefanShivarov/giffle.git
 ```
 
 3. Install NPM packages if necessary
